@@ -8,10 +8,11 @@ class WordsController < ApplicationController
 	end
 
 	def create
-		render json: Word.create(params.require(:word).permit(:name))
+		render json: Word.create(params.require(:word).permit(:name, :description))
 	end
 
 	def show
+
 	end
 
 	def update

@@ -6,21 +6,29 @@ class WordsCtrl
 	# where Word is a reference to a factory that returns all words
 	# where/how does it return all words?
 	# instead of this.scope? this.word?
-	constructor: (@scope, @Word)->
+	constructor: (@scope, @http, @Word)->
 		@catchphrase = "WordCtrl controller/constructor is running"
 		@Word.all()
+			.success (data) =>
+				@words = data
 		# where this below is an instance of WordsCtrl
-		return this
+		# return this
 
 	addWord: (newWord)->
+		@Trie.learn newWord.name
 		@Word.create(newWord)
-		.success (data)->
-			console.log("Inside addWord: data= ", data)
-		console.log("trying to clear form, newWord= ", newWord)
-		console.log("trying to clear form, newWord.name= ", newWord.name)
-		WordsCtrl.newWord = {}
+		.success (data)=>
+			@words.push data
+			# console.log("Inside addWord: data= ", data)
+			# console.log ("this, " this)
+		# 	console.log("in success, that ", that)
+		# console.log("after cuscces, that", that)
+		# # how to clear out the form??
+		# console.log("trying to clear form, newWord= ", newWord)
+		# console.log("trying to clear form, newWord.name= ", newWord.name)
+		# WordsCtrl.newWord = {}
 
-WordCtrls.controller("WordsCtrl", ["$scope", "Word", WordsCtrl])
+WordCtrls.controller("WordsCtrl", ["$scope", "$http", "Word", "Trie", WordsCtrl])
 
 #######################
 ## for doing all in one file, part of app.js.coffee
