@@ -9,8 +9,8 @@ class Router
 	constructor: (@routeProvider, @locationProvider) ->
 		console.log("Initialized Router")
 		console.log("Setting Up")
-		@routeProvider.
-			when "/",
+		@routeProvider
+			.when "/",
 				# can change this if I decide to nest templates in a words folder
 				templateUrl: "/word_templates",
 				controller: "WordsCtrl as words"	

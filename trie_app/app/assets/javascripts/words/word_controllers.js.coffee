@@ -2,7 +2,6 @@
 # note plural
 WordCtrls = angular.module("WordCtrls", [])
 
-# note singular
 class WordsCtrl 
 
 	# instead of this.scope? this.word?
