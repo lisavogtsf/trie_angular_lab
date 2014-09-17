@@ -1,4 +1,4 @@
-# app_router.js.coffee
+
 WordRouter = angular.module("WordRouter",  [
 	"ngRoute"
 ])

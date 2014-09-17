@@ -4,9 +4,9 @@
 
 angular.module("TrieApp", [
 	"WordRouter",
-	"WordCtrls"
-	# ,
-	# "WordFactories"
+	"WordCtrls",
+	"WordFactories"
 ])
 
 # Create an angular app and controller to save and display words using $http.
+
