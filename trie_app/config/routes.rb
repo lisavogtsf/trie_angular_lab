@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :words, except: [:new, :edit]
-
-  match "*path", to: "words#index", via: "get"
-
-  root "words#index"
+	root to: "words#index"
+	resources :words, except: [:new, :edit]
+	resources :book_templates
 
 end

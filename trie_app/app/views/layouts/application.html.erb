@@ -5,11 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+  <!-- jquery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-<h1>Test from application.rb</h1>
-<%= yield %>
+</head>
+<body ng-app = "TrieApp">
+	<div class="container">
+		<div class="row">
+                    <h1>Application.html.rb</h1>
+			<div ng-view></div>
+		</div>
+	</div>
 
 </body>
 </html>
