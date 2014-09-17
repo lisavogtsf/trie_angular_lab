@@ -3,12 +3,13 @@
 WordCtrls = angular.module("WordCtrls", [])
 
 class WordsCtrl 
-
-	# where Word is a reference to a factory
+	# where Word is a reference to a factory that returns all words
+	# where/how does it return all words?
 	# instead of this.scope? this.word?
 	constructor: (@scope, @Word)->
 		@catchphrase = "WordCtrl controller/constructor is running"
 		@Word.all()
+		# where this below is an instance of WordsCtrl
 		return this
 
 	addWord: (newWord)->

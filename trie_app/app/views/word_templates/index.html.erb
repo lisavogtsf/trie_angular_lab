@@ -7,3 +7,13 @@
 	<button>Save</button>
 </form>
 
+{{words}}
+
+
+<div ng-repeat="word in words.Word.all">
+	{{word}} and {{word.name}}
+	<!-- Test of "word in words" as my ng-repeat: {{word}} and {{word.name}}, not quite right -->
+	<!-- word in words.words gives nothing -->
+	<!-- word in words.WordsCtrl gives nothing -->
+</div>
+
